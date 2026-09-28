@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AB.SUBHAN | Our Menu</title>
+  <link rel="stylesheet" href="style.css">
+   <style>
+  :root {
+  --primary-red: #e4002b;
+  --dark-black: #202124;
+  --light-bg: #c07b7b;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--dark-black);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+header {
+  background-color: var(--white);
+ 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-red);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-black);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary-red);
+}
+
+.btn-order-nav {
+  background-color: var(--primary-red);
+  color: var(--white) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+}
+
+/* Reusable Components */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+.btn-primary {
+  background-color: var(--primary-red);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #b30022;
+}
+
+.grid {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 0.8rem 0 0.4rem;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.9rem;
+  padding: 0 1rem;
+}
+
+.card .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-red);
+  margin: 0.8rem 0;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-black);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    
+    gap: 1rem;
+  }
+  .grid {
+      display: grid;     
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">AB.SUBHAN</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="deals.html">Deals</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="order.html" class="btn-order-nav">Order Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Our Full Menu</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=500&q=80" alt="Zinger Burger">
+        <h3>Zinger Burger</h3>
+        <p>Signature crispy chicken burger.</p>
+        <span class="price">Rs. 550</span>
+        <div><a href="order.html" class="btn-primary">Select Item</a></div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=500&q=80" alt="Hot Wings">
+        <h3>Hot Wings (10 Pcs)</h3>
+        <p>Spicy marinated fried wings.</p>
+        <span class="price">Rs. 650</span>
+        <div><a href="order.html" class="btn-primary">Select Item</a></div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=500&q=80" alt="Krunch Burger">
+        <h3>Krunch Burger</h3>
+        <p>Value crispy patty with mayonnaise.</p>
+        <span class="price">Rs. 320</span>
+        <div><a href="order.html" class="btn-primary">Select Item</a></div>
+      </div>
+      <div class="card">
+        <img src="data:image/jpeg;base64,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">
+        <h3>Bucket Fries</h3>
+        <p>Golden potato fries with seasoning.</p>
+        <span class="price">Rs. 400</span>
+        <div><a href="order.html" class="btn-primary">Select Item</a></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AB.SUBHAN. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

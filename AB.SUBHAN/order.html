@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AB.SUBHAN | Place Your Order</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+  :root {
+  --primary-red: #e4002b;
+  --dark-black: #202124;
+  --light-bg: #c07b7b;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--dark-black);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-red);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark-black);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary-red);
+}
+
+.btn-order-nav {
+  background-color: var(--primary-red);
+  color: var(--white) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+}
+
+/* Reusable Components */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+.btn-primary {
+  background-color: var(--primary-red);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #b30022;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 0.8rem 0 0.4rem;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.9rem;
+  padding: 0 1rem;
+}
+
+.card .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-red);
+  margin: 0.8rem 0;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-black);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    
+     flex-direction: column;
+    gap: 1rem;
+  }
+  .grid {
+      display: grid;     
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">AB.SUBHAN</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="deals.html">Deals</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="order.html" class="active btn-order-nav">Order Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container" style="max-width: 600px;">
+    <h2>Online Order Form</h2>
+    <form id="orderForm" style="background: white; padding: 2rem; border-radius: 8px; margin-top: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input
+         type="tel"
+         id="phone"
+          required 
+          placeholder="03XXXXXXXXX"
+        
+      </div>
+      <div class="form-group">
+        <label for="address">Delivery Address</label>
+        <textarea id="address" rows="3" required placeholder="Complete home/office address"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="item">Select Meal / Deal</label>
+        <select id="item" required>
+          <option value="">-- Choose Your Meal --</option>
+          <option value="Zinger Burger">Zinger Burger - Rs. 550</option>
+          <option value="Hot Wings">Hot Wings (10 Pcs) - Rs. 650</option>
+          <option value="Mighty Zinger">Mighty Zinger - Rs. 850</option>
+          <option value="Krunch Burger">Krunch Burger - Rs. 320</option>
+          <option value="Subhan Family Bucket">KFC Family Bucket - Rs. 2,450</option>
+          <option value="Midnight Combo">Midnight Combo - Rs. 1,490</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1" value="1" required>
+      </div>
+      <button type="submit" class="btn-primary" style="width: 100%;">Confirm & Place Order</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AB.SUBHAN. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const item = document.getElementById('item').value;
+      alert(`Thanks ${name}! your '${item}' order has been recived. Our team will contact with you.`);
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
